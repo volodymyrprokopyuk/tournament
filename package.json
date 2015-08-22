@@ -1,0 +1,11 @@
+{
+  "name": "tournament"
+  , "version": "0.1.0"
+  , "description": "Tournament Most Valuable Player calculation"
+  , "author": "Volodymyr Prokopyuk <volodymyrprokopyuk@gmail.com>"
+  , "main": "main.js"
+  , "private": true
+  , "dependencies": {
+    "lodash": "^3.10.x"
+  }
+}
