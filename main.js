@@ -59,6 +59,8 @@ HPosition.prototype.calculatePoints = function() {
     + this.recieved * rule.recieved;
 };
 
+// *** ADD NEW POSITION VARIANTS WITH CORRESPONDING POINTS CACLULATION RULES HERE
+
 // team type with players and totalPoints caclulated by appropriate mixin
 var Team = function(sport, game, name, players) {
   this.sport = sport || '';
@@ -82,6 +84,8 @@ var calculateBasketballTotalPoints = function() {
 var calculateHandballTotalPoints = function() {
   this.totalPoints = _.sum(this.players, 'position.made');
 };
+
+// *** ADD NEW Team.totalPoints CALCULATION ALGORITHMS HERE
 
 // basketball input statistics file parser
 var parseBasketball = function(game, rawGame) {
@@ -112,6 +116,8 @@ var parseHandball = function(game, rawGame) {
   };
   return players;
 };
+
+// *** ADD NEW INPUT STATISTICS FILE PARSERS HERE
 
 // calculate Player.points in corresponding position before knowing winner team
 var calculatePlayersPoints = function(players) {
