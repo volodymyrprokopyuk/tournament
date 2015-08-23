@@ -37,26 +37,26 @@ BPosition.prototype.calculatePoints = function() {
 };
 
 // position variant for handball
-var HPosition = function(sport, game, team, position, made, recieved) {
+var HPosition = function(sport, game, team, position, made, received) {
   this.sport = sport || '';
   this.game = game || '';
   this.team = team || '';
   this.position = position || '';
   this.made = made || 0;
-  this.recieved = recieved || 0;
+  this.received = received || 0;
 };
 
 // handball player points calculation rules
 HPosition.prototype.calculatePoints = function() {
   var rules = {
-    default: { initial: 10, made: 2, recieved: -1 }
-    , G: { initial: 50, made: 5, recieved: -2 }
-    , F: { initial: 20, made: 1, recieved: -1 }
+    default: { initial: 10, made: 2, received: -1 }
+    , G: { initial: 50, made: 5, received: -2 }
+    , F: { initial: 20, made: 1, received: -1 }
   };
   var rule = _.has(rules, this.position)
     ? rules[this.position] : rules['default'];
   return rule.initial + this.made * rule.made
-    + this.recieved * rule.recieved;
+    + this.received * rule.received;
 };
 
 // *** ADD NEW POSITION VARIANTS WITH CORRESPONDING POINTS CACLULATION RULES HERE
