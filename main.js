@@ -20,6 +20,7 @@ var BPosition = function(sport, game, team, position, score, rebounds, assists) 
   this.score = score || 0;
   this.rebounds = rebounds || 0;
   this.assists = assists || 0;
+  this.winner = false;
 };
 
 // basketball player points calculation rules
@@ -44,6 +45,7 @@ var HPosition = function(sport, game, team, position, made, received) {
   this.position = position || '';
   this.made = made || 0;
   this.received = received || 0;
+  this.winner = false;
 };
 
 // handball player points calculation rules
@@ -149,7 +151,10 @@ var recalculateWinnersPoints = function(players) {
   var winnerTeam = _.chain(players).groupBy('position.team')
      .map(calculateTeamTotalPoints).max('totalPoints').value();
   // add 10 extra points to all players of winner team
-  var addExtraPoints = function(player) { player.points += 10; };
+  var addExtraPoints = function(player) {
+    player.points += 10;
+    player.position.winner = true;
+  };
   _.map(winnerTeam.players, addExtraPoints);
   return players;
 };

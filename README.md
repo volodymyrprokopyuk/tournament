@@ -144,14 +144,23 @@ player 6;nick6;42;Team B;F;8;25
        position: 'C',
        score: 15,
        rebounds: 10,
-       assists: 4 },
+       assists: 4,
+       winner: true },
      { sport: 'handball',
        game: 'games/handball.txt',
        team: 'Team A',
        position: 'F',
        made: 10,
-       received: 20 } ] }
+       received: 20,
+       winner: true } ] }
 ```
+
+The **Most Valuable Player** is the player with name `player 3` and nickname
+`nick3`. The player has `82 points` in 2 positions:
+- Position `C` in sport `basketball`, game `games/basketball.txt` and winner
+  team `Team A`
+- Position `F` in sport `handball`, game `games/handball.txt` and winner
+  team `Team A`
 
 ## Install
 
