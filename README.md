@@ -82,7 +82,7 @@ and only creating lightweight lists and hash tables for intermediate results.
 This makes the **sorting algorithm efficient**.
 
 The **Most Valuable Player calculation algorithm**:
-- For each input statistics game file:
+- For each input statistics game file `processGames`:
     - `readGame` from input file
     - `parseGame` using dynamically selected appropriate parser
     - `calculatePlayersPoints` applying correct `Position.calculatePoints`
